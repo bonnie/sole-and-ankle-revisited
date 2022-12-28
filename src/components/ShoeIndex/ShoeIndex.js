@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components/macro";
 
-import { WEIGHTS } from "../../constants";
-
 import Breadcrumbs from "../Breadcrumbs";
 import Select from "../Select";
 import Spacer from "../Spacer";
@@ -15,14 +13,16 @@ const ShoeIndex = ({ sortId, setSortId }) => {
       <MainColumn>
         <Header>
           <Title>Running</Title>
-          <Select
-            label="Sort"
-            value={sortId}
-            onChange={(ev) => setSortId(ev.target.value)}
-          >
-            <option value="newest">Newest Releases</option>
-            <option value="price">Price</option>
-          </Select>
+          <SelectWrapper>
+            <Select
+              label="Sort"
+              value={sortId}
+              onChange={(ev) => setSortId(ev.target.value)}
+            >
+              <option value="newest">Newest Releases</option>
+              <option value="price">Price</option>
+            </Select>
+          </SelectWrapper>
         </Header>
         <Spacer size={32} />
         <ShoeGrid />
@@ -45,10 +45,20 @@ const Wrapper = styled.div`
   flex-direction: row-reverse;
   align-items: baseline;
   gap: 32px;
+
+  @media ${(props) => props.theme.queries.tabletAndSmaller} {
+    gap: 0;
+  }
 `;
 
 const LeftColumn = styled.div`
   flex-basis: 248px;
+
+  @media ${(props) => props.theme.queries.tabletAndSmaller} {
+    flex-basis: 0;
+    width: 0;
+    transform: translateY(-2rem);
+  }
 `;
 
 const MainColumn = styled.div`
@@ -64,6 +74,12 @@ const Header = styled.header`
 const Title = styled.h2`
   font-size: 1.5rem;
   font-weight: ${(props) => props.theme.weights.medium};
+`;
+
+const SelectWrapper = styled.div`
+  @media ${(props) => props.theme.queries.phoneAndSmaller} {
+    display: none;
+  }
 `;
 
 export default ShoeIndex;

@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components/macro";
 
-import { COLORS, WEIGHTS } from "../../constants";
-
 const Sidebar = () => {
   return (
     <Wrapper>
@@ -23,7 +21,11 @@ const Sidebar = () => {
   );
 };
 
-const Wrapper = styled.aside``;
+const Wrapper = styled.aside`
+  @media ${(props) => props.theme.queries.tabletAndSmaller} {
+    display: none;
+  }
+`;
 
 const Link = styled.a`
   display: block;
