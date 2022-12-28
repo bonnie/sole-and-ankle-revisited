@@ -7,6 +7,8 @@ import Spacer from "../Spacer";
 import ShoeSidebar from "../ShoeSidebar";
 import ShoeGrid from "../ShoeGrid";
 
+// this seemed like a good solution, except for bottom alignment on tablet
+//   Josh's solution is definitely better, even though it clutters the DOM with more divs
 const ShoeIndex = ({ sortId, setSortId }) => {
   return (
     <Wrapper>
