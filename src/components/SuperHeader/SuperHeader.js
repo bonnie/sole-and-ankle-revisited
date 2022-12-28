@@ -1,11 +1,11 @@
-import React from 'react';
-import styled from 'styled-components/macro';
+import React from "react";
+import styled from "styled-components/macro";
 
-import { COLORS } from '../../constants';
+// import { COLORS, QUERIES } from "../../constants";
 
-import SearchInput from '../SearchInput';
-import UnstyledButton from '../UnstyledButton';
-import Icon from '../Icon';
+import SearchInput from "../SearchInput";
+import UnstyledButton from "../UnstyledButton";
+import Icon from "../Icon";
 
 const SuperHeader = () => {
   return (
@@ -27,15 +27,19 @@ const Wrapper = styled.div`
   align-items: center;
   gap: 24px;
   font-size: 0.875rem;
-  color: ${COLORS.gray[300]};
-  background-color: ${COLORS.gray[900]};
+  color: ${(props) => props.theme.colors.gray[300]};
+  background-color: ${(props) => props.theme.colors.gray[900]};
   height: 40px;
   padding-left: 32px;
   padding-right: 32px;
+
+  @media ${(props) => props.theme.queries.tabletAndSmaller} {
+    display: none;
+  }
 `;
 
 const MarketingMessage = styled.span`
-  color: ${COLORS.white};
+  color: ${(props) => props.theme.colors.white};
   margin-right: auto;
 `;
 
@@ -46,6 +50,10 @@ const HelpLink = styled.a`
 
   &:not(:focus-visible) {
     outline: none;
+  }
+
+  @media ${(props) => props.theme.queries.tabletAndSmaller} {
+    display: none;
   }
 `;
 

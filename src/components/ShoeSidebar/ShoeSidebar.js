@@ -1,7 +1,7 @@
-import React from 'react';
-import styled from 'styled-components/macro';
+import React from "react";
+import styled from "styled-components/macro";
 
-import { COLORS, WEIGHTS } from '../../constants';
+import { COLORS, WEIGHTS } from "../../constants";
 
 const Sidebar = () => {
   return (
@@ -28,13 +28,13 @@ const Wrapper = styled.aside``;
 const Link = styled.a`
   display: block;
   text-decoration: none;
-  font-weight: ${WEIGHTS.medium};
-  color: ${COLORS.gray[900]};
+  font-weight: ${(props) => props.theme.weights.medium};
+  color: ${(props) => props.theme.colors.gray[900]};
   line-height: 2;
 `;
 
 const ActiveLink = styled(Link)`
-  color: ${COLORS.primary};
+  color: ${(props) => props.theme.colors.primary};
 `;
 
 export default Sidebar;
