@@ -25,7 +25,7 @@ const BREAKPOINTS = {
 };
 
 const QUERIES = {
-  mobileAndSmaller: `(max-width: ${BREAKPOINTS.mobileMax}rem)`,
+  phoneAndSmaller: `(max-width: ${BREAKPOINTS.mobileMax}rem)`,
   tabletAndSmaller: `(max-width: ${BREAKPOINTS.tabletMax}rem)`,
   laptopAndSmaller: `(max-width: ${BREAKPOINTS.laptopMax}rem)`,
 };

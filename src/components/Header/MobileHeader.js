@@ -15,11 +15,11 @@ const MobileHeader = () => {
   return (
     <Wrapper>
       <Logo />
-      <Buttons>
-        <UnstyledButton>
+      <Actions>
+        <ShoppingBagButton>
           <VisuallyHidden>Open shopping cart</VisuallyHidden>
           <Icon id="shopping-bag"></Icon>
-        </UnstyledButton>
+        </ShoppingBagButton>
         <UnstyledButton>
           <VisuallyHidden>Search</VisuallyHidden>
           <Icon id="search"></Icon>
@@ -28,7 +28,7 @@ const MobileHeader = () => {
           <VisuallyHidden>Open menu</VisuallyHidden>
           <Icon id="menu"></Icon>
         </UnstyledButton>
-      </Buttons>
+      </Actions>
       <MobileMenu isOpen={showMobileMenu} onDismiss={handleDismiss} />
     </Wrapper>
   );
@@ -39,24 +39,31 @@ const Wrapper = styled.div`
 
   @media ${(props) => props.theme.queries.tabletAndSmaller} {
     display: flex;
-    padding: 22px 32px 20px 32px;
+    align-content: center;
+    align-items: space-between;
+
+    padding: 18px 32px;
 
     border-top: 4px solid ${(props) => props.theme.colors.gray[900]};
     border-bottom: 1px solid ${(props) => props.theme.colors.gray[300]};
   }
 
-  @media ${(props) => props.theme.queries.mobileAndSmaller} {
+  @media ${(props) => props.theme.queries.phoneAndSmaller} {
     padding-left: 16px;
     padding-right: 16px;
   }
 `;
 
-const Buttons = styled.div`
+const ShoppingBagButton = styled(UnstyledButton)`
+  transform: translateX(-2px);
+`;
+
+const Actions = styled.div`
   display: flex;
   gap: 40px;
   margin-left: auto;
 
-  @media ${(props) => props.theme.queries.mobileAndSmaller} {
+  @media ${(props) => props.theme.queries.phoneAndSmaller} {
     gap: 24px;
   }
 `;

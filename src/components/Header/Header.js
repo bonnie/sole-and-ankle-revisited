@@ -1,14 +1,14 @@
 import React from "react";
 
 import SuperHeader from "../SuperHeader";
-import MainHeader from "./MainHeader";
+import DesktopHeader from "./DesktopHeader";
 import MobileHeader from "./MobileHeader";
 
 const Header = () => {
   return (
     <header>
       <SuperHeader />
-      <MainHeader />
+      <DesktopHeader />
       <MobileHeader />
     </header>
   );

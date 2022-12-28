@@ -3,7 +3,7 @@ import styled from "styled-components/macro";
 
 import Logo from "../Logo";
 
-const MainHeader = () => {
+const DesktopHeader = () => {
   return (
     <Wrapper>
       <Side>
@@ -56,4 +56,4 @@ const NavLink = styled.a`
   }
 `;
 
-export default MainHeader;
+export default DesktopHeader;
