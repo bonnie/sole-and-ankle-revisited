@@ -3,43 +3,96 @@ import React from "react";
 import styled from "styled-components/macro";
 import { DialogOverlay, DialogContent } from "@reach/dialog";
 
-import { QUERIES } from "../../constants";
+import NavLink from "../NavLink";
 
 import UnstyledButton from "../UnstyledButton";
 import Icon from "../Icon";
 import VisuallyHidden from "../VisuallyHidden";
 
-const MobileMenu = ({ isOpen, onDismiss }) => {
-  // const [isOpen, setIsOpen] = React.useState(false);
-
-  if (!isOpen) {
-    return null;
-  }
-
-  // const onDismiss = () => {
-  //   setIsOpen(false);
-  // };
-
+const MobileMenu = ({ isOpen, handleDismiss }) => {
   return (
-    <Wrapper>
-      <button onClick={onDismiss}>Dismiss menu</button>
-      <nav>
-        <a href="/sale">Sale</a>
-        <a href="/new">New&nbsp;Releases</a>
-        <a href="/men">Men</a>
-        <a href="/women">Women</a>
-        <a href="/kids">Kids</a>
-        <a href="/collections">Collections</a>
-      </nav>
-      <footer>
-        <a href="/terms">Terms and Conditions</a>
-        <a href="/privacy">Privacy Policy</a>
-        <a href="/contact">Contact Us</a>
-      </footer>
-    </Wrapper>
+    <Overlay isOpen={isOpen} onDismiss={handleDismiss}>
+      <Content>
+        <CircumNav>
+          <CloseButton onClick={handleDismiss}>
+            <VisuallyHidden>Dismiss menu</VisuallyHidden>
+            <Icon id="close" />
+          </CloseButton>
+        </CircumNav>
+        <Nav>
+          <NavLink href="/sale">Sale</NavLink>
+          <NavLink href="/new">New&nbsp;Releases</NavLink>
+          <NavLink href="/men">Men</NavLink>
+          <NavLink href="/women">Women</NavLink>
+          <NavLink href="/kids">Kids</NavLink>
+          <NavLink href="/collections">Collections</NavLink>
+        </Nav>
+        <Footer>
+          <FooterLink href="/terms">Terms and Conditions</FooterLink>
+          <FooterLink href="/privacy">Privacy Policy</FooterLink>
+          <FooterLink href="/contact">Contact Us</FooterLink>
+        </Footer>
+      </Content>
+    </Overlay>
   );
 };
 
-const Wrapper = styled.div``;
+const Overlay = styled(DialogOverlay)`
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+  position: fixed;
+  background-color: hsl(220deg 5% 40% / 0.8);
+`;
+
+const Content = styled(DialogContent)`
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+  width: 300px;
+  position: absolute;
+  right: 0px;
+
+  padding: 32px;
+  background-color: ${(props) => props.theme.colors.white};
+`;
+
+const CircumNav = styled.div`
+  flex: 1;
+`;
+
+const CloseButton = styled(UnstyledButton)`
+  position: absolute;
+  top: 10px;
+  right: 0px;
+
+  padding: 16px;
+`;
+
+const Nav = styled.nav`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+
+  flex: 0;
+`;
+
+const Footer = styled.footer`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 14px;
+
+  flex: 1;
+`;
+
+const FooterLink = styled.a`
+  font-size: ${14 / 16}rem;
+  color: ${(props) => props.theme.colors.gray[700]};
+  text-decoration: none;
+`;
 
 export default MobileMenu;

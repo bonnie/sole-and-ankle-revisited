@@ -10,7 +10,7 @@ import Logo from "../Logo";
 const MobileHeader = () => {
   const [showMobileMenu, setShowMobileMenu] = React.useState(false);
   const handleClick = () => setShowMobileMenu(true);
-  const handleDismiss = () => () => setShowMobileMenu(false);
+  const handleDismiss = () => setShowMobileMenu(false);
 
   return (
     <Wrapper>
@@ -29,7 +29,7 @@ const MobileHeader = () => {
           <Icon id="menu"></Icon>
         </UnstyledButton>
       </Actions>
-      <MobileMenu isOpen={showMobileMenu} onDismiss={handleDismiss} />
+      <MobileMenu isOpen={showMobileMenu} handleDismiss={handleDismiss} />
     </Wrapper>
   );
 };
