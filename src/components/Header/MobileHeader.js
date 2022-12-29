@@ -44,8 +44,8 @@ const Wrapper = styled.div`
 
     padding: 18px 32px;
 
-    border-top: 4px solid ${(props) => props.theme.colors.gray[900]};
-    border-bottom: 1px solid ${(props) => props.theme.colors.gray[300]};
+    border-top: 4px solid var(--color-gray-900);
+    border-bottom: 1px solid var(--color-gray-300);
   }
 
   @media ${(props) => props.theme.queries.phoneAndSmaller} {

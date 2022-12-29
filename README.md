@@ -103,7 +103,7 @@ As it stands, we have a few colors in our `constants.js` file. When we want to u
 import { COLORS, QUERIES } from "../../constants";
 
 const Something = styled.p`
-  color: ${(props) => props.theme.colors.gray[900]};
+  color: var(--color-gray-900);
 `;
 ```
 

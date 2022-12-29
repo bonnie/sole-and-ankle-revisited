@@ -87,7 +87,7 @@ const Row = styled.div`
 
 const Name = styled.h3`
   font-weight: ${(props) => props.theme.weights.medium};
-  color: ${(props) => props.theme.colors.gray[900]};
+  color: var(--color-gray-900);
 `;
 
 const Price = styled.span`
@@ -96,12 +96,12 @@ const Price = styled.span`
 `;
 
 const ColorInfo = styled.p`
-  color: ${(props) => props.theme.colors.gray[700]};
+  color: var(--color-gray-700);
 `;
 
 const SalePrice = styled.span`
   font-weight: ${(props) => props.theme.weights.medium};
-  color: ${(props) => props.theme.colors.primary};
+  color: var(--color-primary);
 `;
 
 const Flag = styled.div`
@@ -114,15 +114,15 @@ const Flag = styled.div`
   padding: 0 10px;
   font-size: ${14 / 18}rem;
   font-weight: ${(props) => props.theme.weights.bold};
-  color: ${(props) => props.theme.colors.white};
+  color: var(--color-white);
   border-radius: 2px;
 `;
 
 const SaleFlag = styled(Flag)`
-  background-color: ${(props) => props.theme.colors.primary};
+  background-color: var(--color-primary);
 `;
 const NewFlag = styled(Flag)`
-  background-color: ${(props) => props.theme.colors.secondary};
+  background-color: var(--color-secondary);
 `;
 
 export default ShoeCard;

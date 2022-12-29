@@ -28,7 +28,7 @@ const Wrapper = styled.div`
   display: flex;
   align-items: baseline;
   padding: 18px 32px;
-  border-bottom: 1px solid ${(props) => props.theme.colors.gray[300]};
+  border-bottom: 1px solid var(--color-gray-300);
   overflow-x: auto; // for flexible menu items
 
   @media ${(props) => props.theme.queries.tabletAndSmaller} {

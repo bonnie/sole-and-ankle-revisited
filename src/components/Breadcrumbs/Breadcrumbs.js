@@ -22,17 +22,17 @@ const CrumbWrapper = styled.div`
     &::before {
       content: "/";
       margin-right: 8px;
-      color: ${(props) => props.theme.colors.gray[300]};
+      color: var(--color-gray-300);
     }
   }
 `;
 
 const CrumbLink = styled.a`
-  color: ${(props) => props.theme.colors.gray[700]};
+  color: var(--color-gray-700);
   text-decoration: none;
 
   &:hover {
-    color: ${(props) => props.theme.colors.gray[900]};
+    color: var(--color-gray-900);
   }
 `;
 

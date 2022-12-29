@@ -31,12 +31,12 @@ const Link = styled.a`
   display: block;
   text-decoration: none;
   font-weight: ${(props) => props.theme.weights.medium};
-  color: ${(props) => props.theme.colors.gray[900]};
+  color: var(--color-gray-900);
   line-height: 2;
 `;
 
 const ActiveLink = styled(Link)`
-  color: ${(props) => props.theme.colors.primary};
+  color: var(--color-primary);
 `;
 
 export default Sidebar;
