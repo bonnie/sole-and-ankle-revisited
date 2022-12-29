@@ -43,7 +43,7 @@ const Overlay = styled(DialogOverlay)`
   right: 0px;
   left: 0px;
   position: fixed;
-  background-color: hsl(220deg 5% 40% / 0.8);
+  background-color: var(--color-gray-700-80);
 `;
 
 const Content = styled(DialogContent)`
@@ -56,7 +56,7 @@ const Content = styled(DialogContent)`
   right: 0px;
 
   padding: 32px;
-  background-color: ${(props) => props.theme.colors.white};
+  background-color: var(--color-white);
 `;
 
 const CircumNav = styled.div`
@@ -91,7 +91,7 @@ const Footer = styled.footer`
 
 const FooterLink = styled.a`
   font-size: ${14 / 16}rem;
-  color: ${(props) => props.theme.colors.gray[700]};
+  color: var(--color-gray-700);
   text-decoration: none;
 `;
 
